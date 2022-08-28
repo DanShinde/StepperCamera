@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+<body>
+    <button onclick="window.location='http://127.0.0.1:5000/home'">Home</button>
+<h1>The All Images</h1>
+    {% for i in imagelist %}
+    <img src = "{{ url_for('static', filename=i)}}">
+    {% endfor %}
+</body>
+</html>
