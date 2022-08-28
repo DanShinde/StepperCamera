@@ -6,6 +6,23 @@
 </head>
 <body>
 <h1>Let's Get Started</h1>
+<label for="firstname">Enter Title for new data capture:</label>
+{% with messages = get_flashed_messages() %}  
+{% if messages %}  
+      {% for message in messages %}  
+           <p>{{ message }}</p>  
+      {% endfor %}  
+{% endif %}  
+{% endwith %}  
+<form action="create">
+    <label for="url">Enter URL</label>
+    <input type="text" name="url1" value="" required>
+    <label for="shortcode">Enter Name</label>
+    <input type="text" name="shortcode" >
+    <input type="submit" value="Submit">
+</form>
+
 <button onclick="window.location='http://127.0.0.1:5000/'">Image Browser</button>
+<button onclick="window.location='http://127.0.0.1:5000/browser'">File Browser</button>
 </body>
 </html>

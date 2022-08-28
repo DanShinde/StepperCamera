@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   
+        {% if length ==0 %}  
+              
+                   <p>It's an empty directory</p>  
+                
+        {% endif %}  
+      
+    <p>Current file: {{ currentFile }}</p>
+    <p>
+        <table>
+            {% for key, value in fileProperties.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </p>
+</body>
+</html>
