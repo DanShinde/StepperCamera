@@ -15,14 +15,24 @@
 {% endif %}  
 {% endwith %}  
 <form action="create">
-    <label for="url">Enter URL</label>
+    <label for="url">Enter Data name</label>
     <input type="text" name="url1" value="" required>
-    <label for="shortcode">Enter Name</label>
-    <input type="text" name="shortcode" >
     <input type="submit" value="Submit">
-</form>
 
-<button onclick="window.location='http://127.0.0.1:5000/'">Image Browser</button>
-<button onclick="window.location='http://127.0.0.1:5000/browser'">File Browser</button>
+</form>
+<form action="take_firstPic">
+    <input type="submit" value="Start">
+</form>
+<h1> Live Video Streaming </h1> 
+<img src={{currentSnap}}> 
+
+
+
+
+<button onclick="window.location='http://0.0.0.0:5000/'">Image Browser</button>
+<form action="browser">
+    <input type="submit" value="File Browser">
+</form>
+<button onclick="window.location='http://0.0.0.0:5000/about'">Ramu's Page</button>
 </body>
 </html>
