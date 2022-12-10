@@ -99,6 +99,24 @@ def take_firstPic():
     NewSteps.Rot('c')
     return render_template('home.html', currentSnap=currentSnap)
 
+@app.route('/take_video')
+def take_video():
+    global index
+    currentFile = 'video'+str(index)+'.h264'
+    camera= picamera.PiCamera()
+    camera.rotation=180
+    camera.resolution = (1024, 768)
+    camera.start_preview()
+    sleep(3)
+    currentSnap =os.path.join(CurrentDir, currentFile)
+    camera.start_recording(currentSnap)
+    print(currentSnap)
+    NewSteps.Rot('c')
+    camera.stop_recording()
+    camera.stop_preview()
+    camera.close()
+    return render_template('home.html', currentSnap=currentSnap)
+
 @app.route('/browser/<path:urlFilePath>')
 def browser(urlFilePath):
     nestedFilePath = os.path.join(capturedFolder, urlFilePath)
